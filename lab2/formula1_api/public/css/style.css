@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #000;
+  color: white;
+  font-family: "Helvetica", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-links li {
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.navbar-links li:hover,
+.active {
+  background-color: #2ca838;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-container {
+  margin: 20px;
+}
+
+.h1-form {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+form {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+form label {
+  position: absolute;
+  left: -9999px;
+}
+
+form input {
+  color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 6px;
+  line-height: 20px;
+  background-color: transparent;
+  border: 2px solid #2ca838;
+  transition: all 0.3s;
+  padding: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+form input:focus {
+  border-color: #1b1b1b;
+}
+
+form [type="submit"] {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: #2ca838;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+  padding: 12px 0;
+  transition: all 0.4s;
+  font-weight: 700;
+  margin-top: -5px;
+}
+
+form [type="submit"]:hover {
+  background: #1b1b1b;
+}

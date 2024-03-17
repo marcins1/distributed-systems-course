@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get drivers</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div><p class="logo">F1 API</p></div>
+      <ul class="navbar-links">
+        <li><a href="/schedule">SCHEDULE</a></li>
+        <li><a href="/drivers">DRIVERS</a></li>
+        <li class="active"><a href="/informations">INFORMATIONS</a></li>
+      </ul>
+    </nav>
+    <main class="main-container">
+      <h1 class="h1-form">Get infomation about driver's race</h1>
+      <form action="getInformations" method="post">
+        <label for="api_key">Api key</label>
+        <input
+          id="api_key"
+          type="text"
+          name="api_key"
+          placeholder="Select api key"
+          required="true"
+        />
+        <label for="year">Select year</label>
+        <input
+          id="year"
+          type="number"
+          name="year"
+          placeholder="Select year"
+          required="true"
+          value="2023"
+        />
+        <label for="round">Select round</label>
+        <input
+          id="round"
+          type="number"
+          name="round"
+          placeholder="Select round"
+          required="true"
+          value="1"
+        />
+        <label for="driver_name">Select location</label>
+        <input
+          id="driver_name"
+          type="text"
+          name="driver_name"
+          placeholder="Select driver surname"
+          required="true"
+          value="Max"
+        />
+        <label for="driver_surname">Select location</label>
+        <input
+          id="driver_surname"
+          type="text"
+          name="driver_surname"
+          placeholder="Select driver surname"
+          required="true"
+          value="Verstappen"
+        />
+        <label for="name_acronym">Select location</label>
+        <input
+          id="name_acronym"
+          type="text"
+          name="name_acronym"
+          placeholder="Select three letter acronym"
+          required="true"
+          value="VER"
+        />
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
