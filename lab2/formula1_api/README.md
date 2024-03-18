@@ -4,15 +4,11 @@ This is a [Express](https://expressjs.com/) API project for finding informations
 ## Run Locally
 Clone the project
 
-```bash
-  git clone https://github.com/marcins1/distributed-systems-course
-```
+    git clone https://github.com/marcins1/distributed-systems-course
 
 Go to the project directory
 
-```bash
-  cd distributed-systems-course/lab2/formula1_api
-```
+    cd distributed-systems-course/lab2/formula1_api
 
 Create your own .env file with api keys which clients can use (external APIs do not require API keys)
 
@@ -20,15 +16,11 @@ Create your own .env file with api keys which clients can use (external APIs do 
 
 Install dependencies
 
-```bash
-  npm install
-```
+    npm install
 
 Start the server
 
-```bash
-  npm start
-```
+    npm start
 
 ## External API used
  - https://ergast.com/mrd/
