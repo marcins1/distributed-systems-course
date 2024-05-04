@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.fridge";
+option java_outer_classname = "FridgeProto";
+
+package fridge;
+
+enum ChamberType {
+  FRIDGE = 0;
+  FREEZER = 1;
+}
+
+message FridgeTemperatureRequest {
+  string id = 1;
+  ChamberType type = 2;
+  int32 value = 3;
+}
+
+message FridgeToggleRequest {
+  string id = 1;
+  ChamberType type = 2;
+  bool value = 3;
+}
+
+message FridgeInfoRequest {
+  string id = 1;
+}
+
+message FridgeInfoResponse {
+  string id = 1;
+  bool freezerOn = 2;
+  bool fridgeOn = 3;
+  int32 freezerTemperature = 4;
+  int32 fridgeTemperature = 5;
+}
+
+message FridgeResponse {
+  string message = 1;
+}
+
+service FridgeService {
+  rpc SetTemperature(FridgeTemperatureRequest) returns (FridgeResponse) {}
+  rpc SetPower(FridgeToggleRequest) returns (FridgeResponse) {}
+  rpc GetInfo(FridgeInfoRequest) returns (FridgeInfoResponse) {}
+}

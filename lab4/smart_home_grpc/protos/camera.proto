@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.camera";
+option java_outer_classname = "CameraProto";
+
+package camera;
+
+enum CameraType {
+  REGULAR = 0;
+  PTZ = 1;
+  NIGHT = 2;
+}
+
+enum SwitchType {
+  TOGGLE = 0;
+  NIGHT_MODE = 1;
+}
+
+message SwitchRequest {
+  string camera_id = 1;
+  SwitchType switch_type = 2;
+  bool value = 3;
+}
+
+enum CameraResolution {
+  RESOLUTION_480P = 0;
+  RESOLUTION_720P = 1;
+  RESOLUTION_1080P = 2;
+}
+
+message CameraResolutionRequest {
+  string camera_id = 1;
+  CameraResolution resolution = 2;
+}
+
+message CameraRotateRequest {
+  string camera_id = 1;
+  int32 pan = 2;
+  int32 tilt = 3;
+}
+
+message CameraZoomRequest {
+  string camera_id = 1;
+  int32 zoom = 2;
+}
+
+message CameraResponse {
+  string message = 1;
+}
+
+message CameraInfoRequest {
+  string camera_id = 1;
+}
+
+message CameraInfoResponse {
+  string camera_id = 1;
+  CameraType type = 2;
+  bool is_on = 3;
+  bool is_night_mode_on = 4;
+  CameraResolution resolution = 5;
+  int32 pan = 6;
+  int32 tilt = 7;
+  int32 zoom = 8;
+}
+
+service CameraService {
+  rpc CameraSwitch(SwitchRequest) returns (CameraResponse) {}
+  rpc SetResolution(CameraResolutionRequest) returns (CameraResponse) {}
+  rpc Rotate(CameraRotateRequest) returns (CameraResponse) {}
+  rpc Zoom(CameraZoomRequest) returns (CameraResponse) {}
+  rpc GetInfo(CameraInfoRequest) returns (CameraInfoResponse) {}
+}
